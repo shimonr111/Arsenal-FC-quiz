@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>The biggest Arsenal FC quiz</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Rowdies:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <h5>The Arsenal FC Quiz</h5>
+  <div class="styleWindow">
+    <div id="start">
+      <button onclick="userClickedOnStartButton()" type="button" class="startButton">Start the Arsenal quiz</button>
+    </div>
+    <img class="arsenalImg" src="arsenal.png" alt="Arsenal">
+    <div class="questionWindow" id="questionWindow">
+      <p class="labels" id="question"></p>
+      <button onclick="userClickedOnAnswer1()" type="button" class="button" id="one">Answer 1</button><br>
+      <button onclick="userClickedOnAnswer2()" type="button" class="button" id="two">Answer 2</button><br>
+      <button onclick="userClickedOnAnswer3()" type="button" class="button" id="three">Answer 3</button><br>
+      <button onclick="userClickedOnAnswer4()" type="button" class="button" id="four">Answer 4</button><br>
+      <button onclick="userClickedOnNextButton()" type="button" class="nextButton">Next</button>
+    </div>
+    <div id="finish">
+      <p class="labels" id="result"></p>
+      <button onclick="userClickedOnStartButton()" type="button" class="startButton">Try again</button>
+    </div>
+  </div>
+</body>
+<footer>
+  <div class="bottomLine">
+    <p class="name">Shimon Rubin &copy;</p>
+    <p class="year">2022</p>
+  </div>
+  <script type="text/javascript" src="data.js" charset="utf-8"></script>
+  <script type="text/javascript" src="index.js" charset="utf-8"></script>
+</footer>
+
+</html>

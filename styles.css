@@ -1,0 +1,126 @@
+.button {
+  position: relative;
+  left: 120px;
+  transition-duration: 0.4s;
+  margin-top: 10px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 12px;
+  border: 2px solid black;
+  width: 200px;
+}
+
+.button:hover {
+  background-color: red;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.questionWindow {
+  margin-left: 420px;
+  padding-top: 0.1px;
+  padding-bottom: 60px;
+}
+
+h5 {
+  font-size: 30px;
+  margin-left: 500px;
+  font-family: 'Rowdies', cursive;
+}
+
+p{
+  max-width: 500px;
+}
+
+.styleWindow {
+  background-color: red;
+}
+
+.labels {
+  font-family: 'Akaya Telivigala', cursive;
+  font-size: 20px;
+}
+
+.nextButton {
+  transition-duration: 0.4s;
+  position: relative;
+  border-radius: 12px;
+  border: 2px solid black;
+  left: 197px;
+  bottom: -40px;
+}
+
+.nextButton:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.arsenalImg{
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  bottom: 350px;
+}
+
+.bottomLine{
+  margin-left: 600px;
+  margin-top: 70px;
+}
+
+.year{
+  position: absolute;
+  left: 635px;
+  margin: 0;
+  font-size: 13px;
+}
+
+.name{
+  font-size: 13px;
+}
+
+#start{
+  margin-left: 520px;
+  padding-top: 107px;
+  padding-bottom: 107px;
+}
+
+#finish{
+  margin-left: 580px;
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+.startButton {
+ padding: 15px 25px;
+ border-radius: 15px;
+ color: #212121;
+ z-index: 1;
+ background: #e8e8e8;
+ position: relative;
+ font-weight: 900;
+ font-size: 17px;
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms;
+ overflow: hidden;
+}
+
+.startButton::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ height: 100%;
+ width: 0;
+ border-radius: 15px;
+ background-color: #212121;
+ z-index: -1;
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms
+}
+
+.startButton:hover {
+ color: #e8e8e8;
+}
+
+.startButton:hover::before {
+ width: 100%;
+}
