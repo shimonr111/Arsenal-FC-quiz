@@ -1,7 +1,6 @@
 /*Here we define all the variables*/
 
 var currentQuestion = document.getElementById("question");
-var answer = document.getElementById("answer");
 var questionWindow = document.getElementById("questionWindow");
 var startWindow = document.getElementById("start");
 var finishWindow = document.getElementById("finish");
@@ -11,8 +10,9 @@ var thirdAnswer = document.getElementById("three");
 var fourthAnswer = document.getElementById("four");
 var answersArray = [firstAnswer, secondAnswer, thirdAnswer, fourthAnswer];
 var finalResult = document.getElementById("result");
-var i = 0;
+var i = 0; // index of the question and its answers
 var countCorrectAnswers = 0;
+var flagAnswer = false; // flag whether the user clicked answer or not
 
 /*We hide this windows at the beginning*/
 questionWindow.style.display = 'none';
@@ -29,6 +29,7 @@ function setQuestions() {
 
 /*This function check if the first answer is true*/
 function userClickedOnAnswer(numAnswer) {
+  flagAnswer = true;
   changeStatusOfButtons(true);
   if (questions[i].correctAnswer == numAnswer){
     countCorrectAnswers++;
@@ -61,18 +62,25 @@ function userClickedOnStartButton() {
 
 /*This function turning on when the user click on ther next button and it change the question or show the final div*/
 function userClickedOnNextButton() {
-  if (i < questions.length-1) {
-    i++;
-    setQuestions();
-    setDefaultColors();
-    changeStatusOfButtons(false);
+  /*The user tried to click next without choose answer*/
+  if(!flagAnswer){
+    alert("Please choose answer first!");
   }
+  /*The user choose answer*/
   else{
-    finishWindow.style.display = 'block';
-    questionWindow.style.display = 'none';
-    finalResult.innerHTML = "Your score is " + countCorrectAnswers + "/" + questions.length;
+    flagAnswer = false;
+    if (i < questions.length-1) {
+      i++;
+      setQuestions();
+      setDefaultColors();
+      changeStatusOfButtons(false);
+    }
+    else{
+      finishWindow.style.display = 'block';
+      questionWindow.style.display = 'none';
+      finalResult.innerHTML = "Your score is " + countCorrectAnswers + "/" + questions.length;
+    }
   }
-
 }
 
 /*This function return the default back ground color of the answer buttons after we change question*/
