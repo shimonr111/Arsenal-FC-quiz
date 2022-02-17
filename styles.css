@@ -1,3 +1,9 @@
+body{
+  margin: 0;
+  background-image: url("backgroundImage.jpg");
+  background-size: cover;
+}
+
 /*The style of the headline*/
 h5 {
   font-size: 30px;
@@ -80,11 +86,6 @@ p{
 .nextButton:hover {
   background-color: #4CAF50;
   color: white;
-}
-
-/*The style of the red window*/
-.styleContentWindow {
-  background-color: red;
 }
 
 /*The style of the window when we start the quiz*/
