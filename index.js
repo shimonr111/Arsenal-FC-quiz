@@ -1,3 +1,5 @@
+/*Here we define all the variables*/
+
 var currentQuestion = document.getElementById("question");
 var answer = document.getElementById("answer");
 var questionWindow = document.getElementById("questionWindow");
@@ -7,13 +9,16 @@ var firstAnswer = document.getElementById("one");
 var secondAnswer = document.getElementById("two");
 var thirdAnswer = document.getElementById("three");
 var fourthAnswer = document.getElementById("four");
+var answersArray = [firstAnswer, secondAnswer, thirdAnswer, fourthAnswer];
 var finalResult = document.getElementById("result");
 var i = 0;
 var countCorrectAnswers = 0;
 
+/*We hide this windows at the beginning*/
 questionWindow.style.display = 'none';
 finishWindow.style.display = 'none';
 
+/*This function set the question and its answers from the data*/
 function setQuestions() {
   currentQuestion.innerHTML = questions[i].question;
   firstAnswer.textContent = questions[i].choices[0];
@@ -22,52 +27,19 @@ function setQuestions() {
   fourthAnswer.textContent = questions[i].choices[3];
 }
 
-
-function userClickedOnAnswer1() {
+/*This function check if the first answer is true*/
+function userClickedOnAnswer(numAnswer) {
   changeStatusOfButtons(true);
-  if (questions[i].correctAnswer == 0){
+  if (questions[i].correctAnswer == numAnswer){
     countCorrectAnswers++;
-    firstAnswer.style.background = 'green';
+    answersArray[numAnswer].style.background = 'green';
   }
   else{
-    firstAnswer.style.background = 'orange';
+    answersArray[numAnswer].style.background = 'orange';
   }
 }
 
-function userClickedOnAnswer2() {
-  changeStatusOfButtons(true);
-  if (questions[i].correctAnswer == 1){
-    countCorrectAnswers++;
-    secondAnswer.style.background = 'green';
-  }
-  else{
-    secondAnswer.style.background = 'orange';
-  }
-}
-
-function userClickedOnAnswer3() {
-  changeStatusOfButtons(true);
-  if (questions[i].correctAnswer == 2){
-    countCorrectAnswers++;
-    thirdAnswer.style.background = 'green';
-  }
-  else{
-    thirdAnswer.style.background = 'orange';
-  }
-}
-
-function userClickedOnAnswer4() {
-  changeStatusOfButtons(true);
-  if (questions[i].correctAnswer == 3){
-    countCorrectAnswers++;
-    fourthAnswer.style.background = 'green';
-  }
-  else{
-    fourthAnswer.style.background = 'orange';
-  }
-}
-
-
+/*This function disable the answer buttons after the user click on one of them*/
 function changeStatusOfButtons(status){
   firstAnswer.disabled = status;
   secondAnswer.disabled = status;
@@ -75,6 +47,7 @@ function changeStatusOfButtons(status){
   fourthAnswer.disabled = status;
 }
 
+/*This function turning on when the user clicked on the start button and then it change the div and set questions*/
 function userClickedOnStartButton() {
   countCorrectAnswers = 0;
   i=0;
@@ -86,6 +59,7 @@ function userClickedOnStartButton() {
   finishWindow.style.display = 'none';
 }
 
+/*This function turning on when the user click on ther next button and it change the question or show the final div*/
 function userClickedOnNextButton() {
   if (i < questions.length-1) {
     i++;
@@ -101,6 +75,7 @@ function userClickedOnNextButton() {
 
 }
 
+/*This function return the default back ground color of the answer buttons after we change question*/
 function setDefaultColors(){
   firstAnswer.style.background = '';
   secondAnswer.style.background = '';
